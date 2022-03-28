@@ -10,7 +10,10 @@ import {
   EDIT_STREAM,
 } from "./types";
 
-console.log("Streams from index.js", streams.get("/streams").then((response) => console.log(response)));
+console.log(
+  "Streams from index.js",
+  streams.get("/streams").then((response) => console.log(response))
+);
 
 export const SignIn = (id, name) => {
   return {
