@@ -1,18 +1,15 @@
 {
   "streams": [
     {
-      "title": "This is a new title!",
-      "description": "test",
-      "id": 5
-    },
-    {
       "title": "123asd",
       "description": "123",
+      "userId": "111166799951182877889",
       "id": 6
     },
     {
       "title": "123123 So this is the new title",
       "description": "123123",
+      "userId": "111166799951182877889",
       "id": 7
     },
     {
