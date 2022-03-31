@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "../Header";
+import Modal from "../Modal";
 
 const StreamDelete = () => {
   return (
     <div>
-      <Header minified={true} />
-      <div>StreamDelete</div>;
+      StreamDelete
+      <Modal />
     </div>
   );
 };
