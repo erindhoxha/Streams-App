@@ -13,20 +13,28 @@ class StreamList extends React.Component {
     this.props.DeleteStream(entry);
   }
   editEntry(id) {
-    history.push("/stream/edit/" + id)
+    history.push("/stream/edit/" + id);
   }
 
   renderAdmin(stream) {
     if (stream.userId == this.props.currentUserId) {
       return (
         <div className="float-right">
-          <button
+          <Link
+            to={"/stream/delete/" + stream.id}
+            className="delete-btn btn mr-2"
+          >
+            Delete
+          </Link>
+          {/* <button
             onClick={() => this.deleteEntry(stream.id)}
             className="btn delete-btn mr-2"
           >
             Delete
-          </button>
-          <Link to={"/stream/edit/" + stream.id} className="edit-btn btn">Edit</Link>
+          </button> */}
+          <Link to={"/stream/edit/" + stream.id} className="edit-btn btn">
+            Edit
+          </Link>
         </div>
       );
     }
@@ -36,21 +44,21 @@ class StreamList extends React.Component {
     if (this.props.isSignedIn) {
       return (
         <div className="text-right">
-          <Link to="/stream/new" className="btn btn-create mt-4 ml-auto text-right">
+          <Link
+            to="/stream/new"
+            className="btn btn-create mt-4 ml-auto text-right"
+          >
             Create stream
-           </Link>
+          </Link>
         </div>
-      )
+      );
     }
   }
 
   renderList() {
     return this.props.streams.map((stream) => {
       return (
-        <div
-          className="list-group-item list-group-item-action"
-          key={stream.id}
-        >
+        <div className="list-group-item list-group-item-action" key={stream.id}>
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">{stream.title}</h5>
             <small className="text-muted">3 days ago</small>
