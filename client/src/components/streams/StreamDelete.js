@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Header";
 import Modal from "../Modal";
+import history from "../../history";
 
 const StreamDelete = () => {
   const actions = (
@@ -23,6 +24,7 @@ const StreamDelete = () => {
         primaryButtonText="Delete"
         secondaryButtonText="Close"
         actions={actions}
+        onDismiss={() => history.push("/")}
       />
     </div>
   );
