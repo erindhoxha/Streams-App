@@ -30,18 +30,7 @@ const Modal = (props) => {
           <div className="modal-body">
             <p>{props.description}</p>
           </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-create">
-              {props.primaryButtonText}
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              {props.secondaryButtonText}
-            </button>
-          </div>
+          {props.actions}
         </div>
       </div>
     </div>,
