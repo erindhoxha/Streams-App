@@ -17,7 +17,7 @@ const Modal = (props) => {
       >
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">Delete stream</h5>
+            <h5 className="modal-title">{props.title}</h5>
             <button
               type="button"
               className="close"
@@ -28,18 +28,18 @@ const Modal = (props) => {
             </button>
           </div>
           <div className="modal-body">
-            <p>Are you sure you want to delete this stream?.</p>
+            <p>{props.description}</p>
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-create">
-              Delete
+              {props.primaryButtonText}
             </button>
             <button
               type="button"
               className="btn btn-secondary"
               data-dismiss="modal"
             >
-              Close
+              {props.secondaryButtonText}
             </button>
           </div>
         </div>

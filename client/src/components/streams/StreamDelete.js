@@ -6,7 +6,12 @@ const StreamDelete = () => {
   return (
     <div>
       StreamDelete
-      <Modal />
+      <Modal
+        title="Delete Stream"
+        description="Are you sure you want to delete this stream?"
+        primaryButtonText="Delete"
+        secondaryButtonText="Close"
+      />
     </div>
   );
 };
