@@ -18,6 +18,7 @@ const Modal = (props) => {
           <div className="modal-header">
             <h5 className="modal-title">{props.title}</h5>
             <button
+              onClick={props.onDismiss}
               type="button"
               className="close"
               data-dismiss="modal"

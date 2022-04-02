@@ -60,7 +60,9 @@ class StreamList extends React.Component {
       return (
         <div className="list-group-item list-group-item-action" key={stream.id}>
           <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">{stream.title}</h5>
+            <Link to={`/stream/${stream.id}`} className="mb-1">
+              {stream.title}
+            </Link>
             <small className="text-muted">3 days ago</small>
           </div>
           <p className="mb-1">{stream.description}</p>
