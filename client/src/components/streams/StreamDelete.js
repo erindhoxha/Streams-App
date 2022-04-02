@@ -3,27 +3,32 @@ import Header from "../Header";
 import Modal from "../Modal";
 import history from "../../history";
 import { connect } from "react-redux";
-import { FetchStream } from "../../actions";
+import { FetchStream, DeleteStream } from "../../actions";
+import { Link } from "react-router-dom";
 
 class StreamDelete extends React.Component {
   componentDidMount() {
-    console.log("THESE ARE THE PROPS OF STREAMDELETE", this.props);
     this.props.FetchStream(this.props.match.params.id);
-    console.log(this.props.stream);
   }
   renderActions() {
+    const { id } = this.props.match.params;
     return (
       <div className="modal-footer">
-        <button type="button" className="btn btn-create">
+        <button
+          onClick={() => this.props.DeleteStream(id)}
+          type="button"
+          className="btn btn-create"
+        >
           Delete
         </button>
-        <button
+        <Link
+          to="/"
           type="button"
           className="btn btn-secondary"
           data-dismiss="modal"
         >
           Close
-        </button>
+        </Link>
       </div>
     );
   }
@@ -57,4 +62,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { FetchStream })(StreamDelete);
+export default connect(mapStateToProps, { FetchStream, DeleteStream })(
+  StreamDelete
+);
